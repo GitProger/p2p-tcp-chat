@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         strcpy(port, argv[2]);
         printf("Message: ");        
         gets_s(buffer, DEFAULT_BUFLEN);
-        sscanf(buffer, "%s", msg);
+        strcpy(msg, buffer);
     } else if (argc == 2) {
         strcpy(ip, argv[1]);
         printf("Port (default=23): ");
@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
         sscanf(buffer, "%s", port);
         printf("Message: ");        
         gets_s(buffer, DEFAULT_BUFLEN);
-        sscanf(buffer, "%s", msg);
+        strcpy(msg, buffer);
     } else {
         printf("IP address: ");
         gets_s(buffer, 15);
@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
         sscanf(buffer, "%s", port);
         printf("Message: ");        
         gets_s(buffer, DEFAULT_BUFLEN);
-        msg = buffer;
+        strcpy(msg, buffer);
     }
     int res = client(ip, port, msg);
     free(buffer);
