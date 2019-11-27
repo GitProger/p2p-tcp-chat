@@ -24,11 +24,11 @@ def main(args):
     os.system("clear")
     ip = getip()
     if ip == "":
-        print("You are not connected to a local network.");
-        exit();
+        print("You are not connected to a local network.")
+        exit(1)
     print("Port: ", end="")
     port = input()
-    cmd = "sudo ../server/tcpserv " + ip + " " + port;
+    cmd = "sudo ../server/tcpserv " + ip + " " + port
     os.system(cmd)
     return 0
 
