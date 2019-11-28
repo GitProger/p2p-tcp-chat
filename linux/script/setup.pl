@@ -28,11 +28,11 @@ sub getip {
     my $all = `ifconfig`;
     my $beg = index($all, "inet addr:192.168.");
     my $end = index($all, "Bcast");
-    $beg = $beg + length("inet addr:");
-    my $size = $end - $beg;
     if ($beg == -1 or $end == -1) {
         return "";
     }
+    $beg = $beg + length("inet addr:");
+    my $size = $end - $beg;
     return substr($all, $beg, $size);
 }
 
@@ -41,7 +41,7 @@ system("clear");
 my $ip = getip();
 if ($ip eq "") {
     print("You are not connected to a local network.\n");
-    die();
+    exit();
 }
 print("Port: ");
 my $port = input();
