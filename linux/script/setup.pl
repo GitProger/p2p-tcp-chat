@@ -41,7 +41,7 @@ system("clear");
 my $ip = getip();
 if ($ip eq "") {
     print("You are not connected to a local network.\n");
-    exit();
+    die();
 }
 print("Port: ");
 my $port = input();
