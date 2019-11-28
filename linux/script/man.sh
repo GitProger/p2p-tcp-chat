@@ -1,6 +1,6 @@
 echo "================ Usage ================"
 echo "* Usage of tcpcl:"
-echo "   - Enter "./tcpcl" without quaters."
+echo "   - Enter \"./tcpcl\" without quaters."
 echo "   - At the same string type ip address"
 echo "     of a getter."
 echo "   - At the same string type opened"
