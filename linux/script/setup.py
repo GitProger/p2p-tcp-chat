@@ -14,9 +14,9 @@ def getip():
     al = os.popen("ifconfig").read()
     beg = al.find("inet addr:192.168.")
     end = al.find("Bcast")
-    beg += len("inet addr:")
     if beg == -1 or end == -1:
         return ""
+    beg += len("inet addr:")
     return al[beg:end]	
 
 def main(args):
